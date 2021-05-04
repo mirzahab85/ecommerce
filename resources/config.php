@@ -20,7 +20,7 @@ defined("DB_PASS") ? null : define("DB_PASS", "");
 
 defined("DB_NAME") ? null : define("DB_NAME", "ecom_db");
 
-echo TEMPLATE_FRONT;
+// echo TEMPLATE_FRONT;
 
 $connection = mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 
