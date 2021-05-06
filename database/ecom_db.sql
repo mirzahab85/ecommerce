@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2021 at 11:52 PM
+-- Generation Time: May 07, 2021 at 12:54 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -60,10 +60,8 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `product_title`, `product_category_id`, `product_price`, `product_description`, `product_image`) VALUES
-(0, 'product 1', 1, 24.99, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac bibendum quam. Fusce id mauris sit amet augue consectetur aliquet eu at odio. Morbi laoreet mi id lobortis sagittis. Quisque non neque ut eros varius interdum. Fusce sit amet risus mollis, luctus est id, egestas elit. Cras nisl mi, luctus sit amet lorem quis, scelerisque laoreet nunc. Sed in blandit arcu, ultrices mollis eros. Proin urna risus, faucibus nec sodales eu, consequat at felis. Nulla facilisi. Integer ac ultrices massa. Aenean sed augue sit amet ex suscipit pretium. Nullam imperdiet a libero quis rutrum. Pellentesque accumsan orci urna, vel fringilla lectus aliquet eget.', 'http://placehold.it/320x150'),
-(0, 'product 2', 1, 24.99, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac bibendum quam. Fusce id mauris sit amet augue consectetur aliquet eu at odio. Morbi laoreet mi id lobortis sagittis. Quisque non neque ut eros varius interdum. Fusce sit amet risus mollis, luctus est id, egestas elit. Cras nisl mi, luctus sit amet lorem quis, scelerisque laoreet nunc. Sed in blandit arcu, ultrices mollis eros. Proin urna risus, faucibus nec sodales eu, consequat at felis. Nulla facilisi. Integer ac ultrices massa. Aenean sed augue sit amet ex suscipit pretium. Nullam imperdiet a libero quis rutrum. Pellentesque accumsan orci urna, vel fringilla lectus aliquet eget.', 'http://placehold.it/320x150'),
-(0, 'product 1', 1, 24.99, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac bibendum quam. Fusce id mauris sit amet augue consectetur aliquet eu at odio. Morbi laoreet mi id lobortis sagittis. Quisque non neque ut eros varius interdum. Fusce sit amet risus mollis, luctus est id, egestas elit. Cras nisl mi, luctus sit amet lorem quis, scelerisque laoreet nunc. Sed in blandit arcu, ultrices mollis eros. Proin urna risus, faucibus nec sodales eu, consequat at felis. Nulla facilisi. Integer ac ultrices massa. Aenean sed augue sit amet ex suscipit pretium. Nullam imperdiet a libero quis rutrum. Pellentesque accumsan orci urna, vel fringilla lectus aliquet eget.', 'http://placehold.it/320x150'),
-(0, 'product 2', 1, 24.99, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac bibendum quam. Fusce id mauris sit amet augue consectetur aliquet eu at odio. Morbi laoreet mi id lobortis sagittis. Quisque non neque ut eros varius interdum. Fusce sit amet risus mollis, luctus est id, egestas elit. Cras nisl mi, luctus sit amet lorem quis, scelerisque laoreet nunc. Sed in blandit arcu, ultrices mollis eros. Proin urna risus, faucibus nec sodales eu, consequat at felis. Nulla facilisi. Integer ac ultrices massa. Aenean sed augue sit amet ex suscipit pretium. Nullam imperdiet a libero quis rutrum. Pellentesque accumsan orci urna, vel fringilla lectus aliquet eget.', 'http://placehold.it/320x150');
+(1, 'product 1', 1, 24.99, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac bibendum quam. Fusce id mauris sit amet augue consectetur aliquet eu at odio. Morbi laoreet mi id lobortis sagittis. Quisque non neque ut eros varius interdum. Fusce sit amet risus mollis, luctus est id, egestas elit. Cras nisl mi, luctus sit amet lorem quis, scelerisque laoreet nunc. Sed in blandit arcu, ultrices mollis eros. Proin urna risus, faucibus nec sodales eu, consequat at felis. Nulla facilisi. Integer ac ultrices massa. Aenean sed augue sit amet ex suscipit pretium. Nullam imperdiet a libero quis rutrum. Pellentesque accumsan orci urna, vel fringilla lectus aliquet eget.', 'http://placehold.it/320x150'),
+(2, 'product 2', 1, 299.99, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac bibendum quam. Fusce id mauris sit amet augue consectetur aliquet eu at odio. Morbi laoreet mi id lobortis sagittis. Quisque non neque ut eros varius interdum. Fusce sit amet risus mollis, luctus est id, egestas elit. Cras nisl mi, luctus sit amet lorem quis, scelerisque laoreet nunc. Sed in blandit arcu, ultrices mollis eros. Proin urna risus, faucibus nec sodales eu, consequat at felis. Nulla facilisi. Integer ac ultrices massa. Aenean sed augue sit amet ex suscipit pretium. Nullam imperdiet a libero quis rutrum. Pellentesque accumsan orci urna, vel fringilla lectus aliquet eget.', 'http://placehold.it/320x150');
 
 --
 -- Indexes for dumped tables
@@ -76,6 +74,12 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`cat_id`);
 
 --
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`product_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -84,6 +88,12 @@ ALTER TABLE `categories`
 --
 ALTER TABLE `categories`
   MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
