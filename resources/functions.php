@@ -45,6 +45,9 @@ return mysqli_fetch_array($result);
 
 }
 
+
+/***********************************FRONT END FUNCTIONS*********************************/
+
 // get products
 
 function get_products() {
@@ -61,7 +64,7 @@ $product = <<<DELIMETER
         <a href="item.php?id={$row['product_id']}"><img src="{$row['product_image']}" alt=""></a>
         <div class="caption">
             <h4 class="pull-right">&#36;{$row['product_price']}</h4>
-            <h4><a href="product.html">{$row['product_title']}</a>
+            <h4><a href="item.php?id={$row['product_id']}">{$row['product_title']}</a>
             </h4>
             <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
              <a class="btn btn-primary" target="_blank" href="item.php?id={$row['product_id']}">Add to cart</a>
@@ -96,5 +99,8 @@ echo $categories_links;
         }
 
 }
+
+
+/***********************************BACK END FUNCTIONS*********************************/
 
 ?>
