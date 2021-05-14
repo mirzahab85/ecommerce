@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2021 at 04:35 PM
+-- Generation Time: May 14, 2021 at 05:04 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -73,16 +73,17 @@ INSERT INTO `products` (`product_id`, `product_title`, `product_category_id`, `p
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `username`, `email`) VALUES
-(1, 'mirza\r\n', 'mirza.habul@gmail.com'),
-(2, 'edvin', 'edvin@admin.com');
+INSERT INTO `users` (`user_id`, `username`, `email`, `password`) VALUES
+(1, 'mirza\r\n', 'mirza.habul@gmail.com', ''),
+(2, 'edvin', 'edvin@admin.com', '');
 
 --
 -- Indexes for dumped tables

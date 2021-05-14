@@ -173,13 +173,31 @@ function get_products_in_cat_page() {
 
         function login_user() {
 
+        if(isset($_POST['submit'])){
+        
+        $username = esccape_string($_POST['username']);
+        $password = esccape_string($_POSt['password']);
+        
+        $query = query("SELECT * FROM users WHERE username '{$username}' AND password '{$password}'");
+        confirm();
+
+        if(mysqli_num_rows($query) == 0) {
+        
+        redirect("login.php");
+
+        } else {
+        
+        redirect("admin");     
+
+        }
+
+        }        
 
 
 
 
 
 
-            
         }
 
 
