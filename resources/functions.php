@@ -205,6 +205,16 @@ function get_products_in_cat_page() {
         }
         
     }
+
+    function send_message(){
+
+        if (isset($_POST['submit'])){
+
+            echo "It works";
+            
+        }
+
+    }
     
 /***********************************BACK END FUNCTIONS*********************************/
 
