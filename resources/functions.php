@@ -1,8 +1,28 @@
 <?php
 
-
 // helper functions
 
+function set_message($msg){
+
+if(!empty($msg)) {
+
+$_SESSION['message'] = $msg;
+
+} else {
+
+$msg = "";
+
+    }
+
+}
+
+function display_message() {
+
+    if(isset($_SESSION['message'])) {
+        echo $_SESSION['message'];
+        unset($_SESSION['message']);
+    }
+}
 
 function redirect($location){
 
@@ -44,7 +64,6 @@ return mysqli_fetch_array($result);
 
 
 }
-
 
 /***********************************FRONT END FUNCTIONS*********************************/
 
@@ -100,11 +119,6 @@ echo $categories_links;
 
 }
 
-
-
-
-
-
 function get_products_in_cat_page() {
 
     $query = query(" SELECT * FROM products WHERE product_category_id = " . escape_string($_GET['id']) . " ");
@@ -135,11 +149,6 @@ function get_products_in_cat_page() {
     
     }
     
-
-
-
-
-
     function get_products_in_shop_page() {
 
         $query = query(" SELECT * FROM products");
@@ -170,42 +179,33 @@ function get_products_in_cat_page() {
         
         }
 
+        function login_user(){
 
-        function login_user() {
+        if (isset($_POST['submit'])){
+        
+        $username = escape_string($_POST['username']);
+        $password = escape_string($_POST['password']);
 
-        if(isset($_POST['submit'])){
-        
-        $username = esccape_string($_POST['username']);
-        $password = esccape_string($_POSt['password']);
-        
-        $query = query("SELECT * FROM users WHERE username '{$username}' AND password '{$password}'");
-        confirm();
+        $query = query("SELECT * FROM users WHERE username = '{$username}' AND password = '{$password}'");
+        confirm($query);
 
         if(mysqli_num_rows($query) == 0) {
+            
         
+        set_message("Your Password or Password are wrong");
         redirect("login.php");
 
         } else {
-        
+
+        set_message("Welcome to Admin {$username}");
         redirect("admin");     
-
+        
         }
-
-        }        
-
-
-
-
-
-
+         
         }
-
-
-
-
-
-
-
+        
+    }
+    
 /***********************************BACK END FUNCTIONS*********************************/
 
 ?>
