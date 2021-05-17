@@ -4,7 +4,7 @@
 
 <?php
 
-$_SESSION['product_1'] = 4
+$_SESSION['product_1'] = 4;
 
 ?>
 

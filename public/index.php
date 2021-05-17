@@ -23,10 +23,11 @@
 
                 <div class="row">
 
-                    <?php get_products() ?>
+                    <h1>
 
-                    
-                   
+                    </h1>
+
+                    <?php get_products() ?>
 
                 </div><!-- Rows ends here -->
 
