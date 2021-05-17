@@ -210,8 +210,24 @@ function get_products_in_cat_page() {
 
         if (isset($_POST['submit'])){
 
-            echo "It works";
-            
+            $to             =   "mirza.habul1985@gmail.com";
+            $from_name      =   $_POST['name'];
+            $subject        =   $_POST['subject'];
+            $email          =   $_POST['email'];
+            $message        =   $_POST['message'];
+
+            $headers = "From: {$from_name} {$email}";
+
+            if(!result) {
+
+                set_message("Sorry we could not send your message");
+                redirect("contact.php");
+            } else {
+
+                set_message("Your message has been sent");
+                redirect("contact.php");
+            }
+
         }
 
     }
