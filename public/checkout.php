@@ -2,16 +2,6 @@
 
 <?php include(TEMPLATE_FRONT . DS . "header.php") ?>
 
-<?php
-
-$_SESSION['product_1'] = 4;
-
-?>
-
-
-
-
-
 
 
 
@@ -23,6 +13,7 @@ $_SESSION['product_1'] = 4;
 
 <div class="row">
 
+      <h4 class="text-center bg-danger"><?php display_message(); ?></h4>
       <h1>Checkout</h1>
 
 <form action="">
