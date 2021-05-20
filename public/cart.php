@@ -53,9 +53,15 @@ function cart() {
 
 foreach ($_SESSION as $name => $value) {
 
-if(substr($name, 0, 7) == "product_") {
+if($value > 0) {
+
+if(substr($name, 0, 8) == "product_") {
+
+$length = strlen($name - 8);
+
+$id = substr($name, 8 , $length);
     
-$query = query("SELECT * FROM products");
+$query = query("SELECT * FROM products WHERE product_id = " . escape_string($id) . " ");
 confirm($query);
 
 while ($row = fetch_array($query)) {
@@ -74,6 +80,8 @@ $product = <<<DELIMETER
 DELIMETER;
 
 echo $product;
+
+}
 
 }
 
