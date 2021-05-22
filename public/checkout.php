@@ -2,20 +2,8 @@
 <?php require_once("cart.php"); ?>
 <?php include(TEMPLATE_FRONT . DS . "header.php") ?>
 
-<?php 
-
-if(isset($_SESSION['product_1'])) {
-
-echo $_SESSION['item_total'];
-
-}
-
-?>
-
-
     <!-- Page Content -->
     <div class="container">
-
 
 <!-- /.row --> 
 
@@ -42,7 +30,6 @@ echo $_SESSION['item_total'];
 </form>
 
 
-
 <!--  ***********CART TOTALS*************-->
             
 <div class="col-xs-4 pull-right ">
@@ -52,7 +39,8 @@ echo $_SESSION['item_total'];
 
 <tr class="cart-subtotal">
 <th>Items:</th>
-<td><span class="amount">4</span></td>
+<td><span class="amount"><?php 
+echo isset($_SESSION['item_quantity']) ? $_SESSION['item_quantity'] : $_SESSION['item_quantity'] = "0";?></span></td>
 </tr>
 <tr class="shipping">
 <th>Shipping and Handling</th>
@@ -62,21 +50,16 @@ echo $_SESSION['item_total'];
 <tr class="order-total">
 <th>Order Total</th>
 <td><strong><span class="amount">&#36;<?php 
-echo ($_SESSION['item_total']) ? $_SESSION['item_total'] : $_SESSION['item_total'] = "";?>
-
-
-
+echo isset($_SESSION['item_total']) ? $_SESSION['item_total'] : $_SESSION['item_total'] = "0";?>
 
 </span></strong> </td>
 </tr>
-
 
 </tbody>
 
 </table>
 
 </div><!-- CART TOTALS-->
-
 
  </div><!--Main Content-->
 
