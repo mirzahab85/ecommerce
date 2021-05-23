@@ -28,9 +28,9 @@
             <?php cart(); ?>
         </tbody>
     </table>
-    <input type="image" name="submit"
-    src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"
-    alt="PayPal - The safer, easier way to pay online">
+    <input type="image" name="upload"
+src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"
+alt="PayPal - The safer, easier way to pay online">
 </form>
 
 
