@@ -119,5 +119,26 @@ $_SESSION['item_quantity'] = $item_quantity;
 
 }
 
+function show_paypal() {
+
+if(isset($_SESSION['item_quantity'])) {
+
+$paypal_button = <<<DELIMETER
+
+    <input type="image" name="upload"
+src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"
+alt="PayPal - The safer, easier way to pay online">
+
+
+
+DELIMETER;
+
+return $paypal_button;
+
+
+    }
+
+}
+
 
 ?>
