@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 17, 2021 at 10:17 PM
+-- Generation Time: May 24, 2021 at 10:28 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -39,6 +39,29 @@ CREATE TABLE `categories` (
 INSERT INTO `categories` (`cat_id`, `cat_title`) VALUES
 (1, 'example 1'),
 (2, 'example 2');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `order_id` int(11) NOT NULL,
+  `order_amount` float NOT NULL,
+  `order_transaction` varchar(255) NOT NULL,
+  `order_status` varchar(255) NOT NULL,
+  `order_currency` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`order_id`, `order_amount`, `order_transaction`, `order_status`, `order_currency`) VALUES
+(1, 345, 'USA', '34535434', 'Completed'),
+(2, 345, 'USA', '34535434', 'Completed'),
+(3, 345, 'USA', '34535434', 'Completed');
 
 -- --------------------------------------------------------
 
@@ -96,6 +119,12 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`cat_id`);
 
 --
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`order_id`);
+
+--
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
@@ -116,6 +145,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `categories`
   MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `products`
