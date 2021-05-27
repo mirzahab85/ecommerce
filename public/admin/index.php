@@ -1,5 +1,6 @@
 <?php require_once("../../resources/config.php"); ?>
 
+
 <?php include(TEMPLATE_BACK . "/header.php"); ?>
 
         <div id="page-wrapper">
@@ -22,6 +23,15 @@
                     </div>
                 </div>
                 <!-- /.row -->
+
+                <?php
+
+                if($_SERVER['REQUEST_URI'] == "/ecom/public/admin/" || $_SERVER['REQUEST_URI'] == "/ecom/public/admin/index.php") {
+
+                    include(TEMPLATE_BACK . "/admin_content.php");
+                }
+
+                ?>
 
             </div>
             <!-- /.container-fluid -->
