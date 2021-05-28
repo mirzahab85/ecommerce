@@ -1,5 +1,4 @@
-<?php require_once("../../resources/config.php"); ?>
-
+<?php require_once("../../resources/config.php") ?>
 
 <?php include(TEMPLATE_BACK . "/header.php"); ?>
 
@@ -26,11 +25,10 @@
 
                 <?php
 
-                if($_SERVER['REQUEST_URI'] == "/ecom/public/admin/" || $_SERVER['REQUEST_URI'] == "/ecom/public/admin/index.php") {
-
+                if($_SERVER['REQUEST_URI'] == "/ecommerce/public/admin/" || $_SERVER['REQUEST_URI'] == "/ecommerce/public/admin/index.php")  {
                     include(TEMPLATE_BACK . "/admin_content.php");
                 }
-
+                
                 ?>
 
             </div>
