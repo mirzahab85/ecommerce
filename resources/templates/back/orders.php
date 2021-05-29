@@ -3,7 +3,15 @@
 
 <?php include(TEMPLATE_BACK . "/header.php"); ?>
 
-<div class="col-md-12">
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+
+                
+
+
+        <div class="col-md-12">
 <div class="row">
 <h1 class="page-header">
    All Orders
@@ -41,6 +49,16 @@
     </tbody>
 </table>
 </div>
+
+
+
+
+
+
+
+
+
+
 
             </div>
             <!-- /.container-fluid -->
