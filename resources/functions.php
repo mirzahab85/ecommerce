@@ -178,6 +178,8 @@ function get_products_in_cat_page() {
                 }
         
         }
+        
+
 
         function login_user(){
 
@@ -196,14 +198,12 @@ function get_products_in_cat_page() {
         redirect("login.php");
 
         } else {
-
-        set_message("Welcome to Admin {$username}");
+        
+        $_SESSION['username'] = $username; 
         redirect("admin");     
         
+                 }
         }
-         
-        }
-        
     }
 
     function send_message(){
