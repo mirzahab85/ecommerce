@@ -140,5 +140,38 @@ return $paypal_button;
 
 }
 
+function report() {
+$total = 0;
+$item_quantity = 0;
+    
+foreach ($_SESSION as $name => $value) {
+    
+if($value > 0) {
+    
+if(substr($name, 0, 8) == "product_") {
+    
+$length = strlen($name) - 8;
+    
+$id = substr($name, 8 , $length);
+        
+$query = query("SELECT * FROM products WHERE product_id = " . escape_string($id). " ");
+confirm($query);
+    
+while ($row = fetch_array($query)) {
+    
+$sub = $row['product_price']*$value;
+$item_quantity +=$value;
+    
+}
+    
+$total += $sub;
+echo $item_quantity;
+    
+        	}
+    }
+    
+  }
+    
+}
 
 ?>
