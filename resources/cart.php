@@ -141,6 +141,21 @@ return $paypal_button;
 }
 
 function report() {
+
+if(isset($_GET['tx'])) {
+
+$amount = $_GET['amt'];
+$currency = $_GET['cc'];
+$transaction = $_GET['tx'];
+$status = $_GET['st'];
+        
+$send_order = query("INSERT INTO orders (order_amount, order_transaction, order_status, order_currency) VALUES('{$amount}','{$currency}','{$transaction}','{$status}')");
+
+$last_id = last_id();
+
+confirm($send_order);
+
+        
 $total = 0;
 $item_quantity = 0;
     
@@ -163,7 +178,7 @@ $product_price = $row['product_price'];
 $sub = $row['product_price']*$value;
 $item_quantity +=$value;
 
-$insert_report = query("INSERT INTO reports (product_id, product_price, product_quantity) VALUES('{$id}','{$product_price}','{$value}')");
+$insert_report = query("INSERT INTO reports (product_id, order_id, product_price, product_quantity) VALUES('{$id}','{$last_id}','{$product_price}','{$value}')");
 
 confirm($insert_report);
     
@@ -176,7 +191,12 @@ echo $item_quantity;
     }
     
   }
+  
+// session destroy    
+} else {
     
+    redirect("index.php");
+    
+    }
 }
-
 ?>
