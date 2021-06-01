@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 30, 2021 at 10:49 PM
+-- Generation Time: Jun 01, 2021 at 09:16 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -66,7 +66,14 @@ INSERT INTO `orders` (`order_id`, `product_id`, `order_amount`, `order_transacti
 (4, 0, 345, 'USA', '34535434', 'Completed'),
 (5, 0, 345, 'USA', '34535434', 'Completed'),
 (6, 0, 345, 'USA', '34535434', 'Completed'),
-(7, 0, 345, 'USA', '34535434', 'Completed');
+(7, 0, 345, 'USA', '34535434', 'Completed'),
+(8, 0, 345, 'USA', '34535434', 'Completed'),
+(9, 0, 345, 'USA', '34535434', 'Completed'),
+(10, 0, 345, 'USA', '34535434', 'Completed'),
+(11, 0, 345, 'USA', '34535434', 'Completed'),
+(12, 0, 345, 'USA', '34535434', 'Completed'),
+(13, 0, 345, 'USA', '34535434', 'Completed'),
+(14, 0, 345, 'USA', '34535434', 'Completed');
 
 -- --------------------------------------------------------
 
@@ -102,6 +109,7 @@ INSERT INTO `products` (`product_id`, `product_title`, `product_category_id`, `p
 CREATE TABLE `reports` (
   `report_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
   `product_price` float NOT NULL,
   `product_quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -175,7 +183,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -187,7 +195,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `reports`
 --
 ALTER TABLE `reports`
-  MODIFY `report_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `report_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
