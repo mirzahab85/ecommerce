@@ -242,4 +242,32 @@ function get_products_in_cat_page() {
     
 /***********************************BACK END FUNCTIONS*********************************/
 
+function display_orders() {
+    
+    
+$query = query("SELECT * FROM orders");
+confirm($query);
+
+
+while($row = fetch_array($query)) { 
+
+    
+$orders = <<<DELIMETER
+
+<tr>
+    <td>{$row['order_id']}</td>
+    <td>{$row['order_amount']}</td>
+    <td>{$row['order_transaction']}</td>
+    <td>{$row['order_currency']}</td>
+    <td>{$row['order_status']}</td>
+
+DELIMETER;
+
+echo $orders;
+
+
+        }      
+
+    }
+
 ?>
