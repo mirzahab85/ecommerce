@@ -3,7 +3,7 @@
 
 <?php
 
-report();
+process_transaction();
 
 ?>
 
