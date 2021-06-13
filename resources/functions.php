@@ -269,6 +269,35 @@ echo $orders;
 
         }      
     }
-    
 
+
+
+
+/************************************** Admin Products ****************************************/
+
+function get_products_in_admin() {
+
+$query = query(" SELECT * FROM products");
+confirm($query);
+    
+while($row = fetch_array($query)) {
+    
+$product = <<<DELIMETER
+
+         <tr>
+            <td>{$row['product_id']}</td>
+            <td>{$row['product_title']}<br>
+            <img src="{$row['product_image']} alt="">
+            </td>
+            <td>Category</td>
+            <td>{$row['product_price']}</td>
+            <td>{$row['product_quantity']}</td>
+         </tr> 
+    
+DELIMETER;
+    
+echo $product;
+    }
+}
+    
 ?>
