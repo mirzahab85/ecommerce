@@ -1,18 +1,13 @@
-
-
+<?php add_product(); ?>
 <div class="col-md-12">
 
 <div class="row">
 <h1 class="page-header">
    Add Product
-
 </h1>
 </div>
                
-
-
 <form action="" method="post" enctype="multipart/form-data">
-
 
 <div class="col-md-8">
 
@@ -22,13 +17,10 @@
        
     </div>
 
-
     <div class="form-group">
            <label for="product-title">Product Description</label>
       <textarea name="product_description" id="" cols="30" rows="10" class="form-control"></textarea>
     </div>
-
-
 
     <div class="form-group row">
 

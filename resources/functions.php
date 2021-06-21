@@ -297,5 +297,23 @@ DELIMETER;
 echo $product;
     }
 }
+
+/********************************Add Products in admin *******************************/
+
+function add_product() {
+
+if(isset($_POST['publish'])) {
+
+$_POST['product_title'];
+
+
+
+
+}
+
+
+
+
+}
     
 ?>
