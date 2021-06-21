@@ -312,7 +312,7 @@ $product_desc                  =       escape_string($_POST['product_desc']);
 $product_image                 =       escape_string($FILES['file']['name']);
 $image_temp_location           =       escape_string($FILES['file']['tmp_name']);
 
-
+move_uploaded_file($image_temp_location , UPLOAD_DIRECTORY . DS . $product_image);
 
 
 }
