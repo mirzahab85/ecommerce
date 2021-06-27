@@ -375,5 +375,35 @@ function show_categories_add_product_page(){
             }
     
     }
+
+/**********************************************updating product code **********************************************/
+
+function update_product() {
+
+    if(isset($_POST['publish'])) {
+    
+        $product_title          = escape_string($_POST['product_title']);
+        $product_category_id    = escape_string($_POST['product_category_id']);
+        $product_price          = escape_string($_POST['product_price']);
+        $product_description    = escape_string($_POST['product_description']);
+        $short_desc             = escape_string($_POST['short_desc']);
+        $product_quantity       = escape_string($_POST['product_quantity']);
+        $product_image          = $_FILES['file']['name'];
+        $image_temp_location    = $_FILES['file']['tmp_name'];
+        
+        move_uploaded_file($image_temp_location  , UPLOAD_DIRECTORY . DS . $product_image);
+        
+        
+        $query = "UPDATE products SET";
+        $quer .= "product_title = '{$product_title}',"; 
+        $quer .= "product_category_id = '{$product_category_id}',"; 
+
+
+        
+        confirm($query);
+        set_message("Product has been updated");
+        redirect("index.php?products");
+        }
+    }
     
 ?>
