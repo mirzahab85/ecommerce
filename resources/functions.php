@@ -395,8 +395,14 @@ function update_product() {
         
         
         $query = "UPDATE products SET";
-        $quer .= "product_title = '{$product_title}',"; 
-        $quer .= "product_category_id = '{$product_category_id}',"; 
+        $query .= "product_title            = '{$product_title}'            ,"; 
+        $query .= "product_category_id      = '{$product_category_id}'      ,"; 
+        $query .= "product_price            = '{$product_price}'            ,"; 
+        $query .= "product_description      = '{$product_description}'      ,"; 
+        $query .= "short_desc               = '{$short_desc}'               ,"; 
+        $query .= "product_quantity         = '{$product_quantity}'         ,"; 
+        $query .= "product_iamage           = '{$product_image}'             "; 
+        $query .= "WHERE product_id" . escape_string($_GET['id']); 
 
 
         
