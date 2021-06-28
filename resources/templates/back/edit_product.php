@@ -1,4 +1,31 @@
 
+<?php
+ 
+ 
+ if(isset($_GET['id'])) {
+  
+  
+     $query = query("SELECT * FROM products WHERE product_id = " . escape_string($_GET['id']) . " ");
+     confirm($query);
+  
+     while($row = fetch_array($query)) {
+  
+    $product_title          = escape_string($row['product_title']);
+    $product_category_id    = escape_string($row['product_category_id']);
+    $product_price          = escape_string($row['product_price']);
+    $product_description    = escape_string($row['product_description']);
+    $short_desc             = escape_string($row['short_desc']);
+    $product_quantity       = escape_string($row['product_quantity']);
+    $product_image          = escape_string($row['product_image']);
+
+    }
+
+update_product();
+
+}
+
+?>
+
 <div class="col-md-12">
 
 <div class="row">
@@ -11,11 +38,14 @@
 
 <div class="col-md-8">
 
+<div class="col-md-8">
+
 <div class="form-group">
     <label for="product-title">Product Title </label>
-        <input type="text" name="product_title" class="form-control">
+    <input type="text" name="product_title" class="form-control" value="<?php echo $product_title; ?>">
        
     </div>
+
 
     <div class="form-group">
            <label for="product-title">Product Description</label>

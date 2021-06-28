@@ -380,7 +380,7 @@ function show_categories_add_product_page(){
 
 function update_product() {
 
-    if(isset($_POST['publish'])) {
+    if(isset($_POST['Update'])) {
     
         $product_title          = escape_string($_POST['product_title']);
         $product_category_id    = escape_string($_POST['product_category_id']);
@@ -401,7 +401,7 @@ function update_product() {
         $query .= "product_description      = '{$product_description}'      ,"; 
         $query .= "short_desc               = '{$short_desc}'               ,"; 
         $query .= "product_quantity         = '{$product_quantity}'         ,"; 
-        $query .= "product_iamage           = '{$product_image}'             "; 
+        $query .= "product_image            = '{$product_image}'             ";
         $query .= "WHERE product_id" . escape_string($_GET['id']); 
 
 
