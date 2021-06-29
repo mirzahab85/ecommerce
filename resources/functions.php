@@ -380,7 +380,7 @@ function show_categories_add_product_page(){
 
 function update_product() {
 
-    if(isset($_POST['Update'])) {
+    if(isset($_POST['update'])) {
     
         $product_title          = escape_string($_POST['product_title']);
         $product_category_id    = escape_string($_POST['product_category_id']);

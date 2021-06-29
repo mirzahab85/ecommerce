@@ -4,7 +4,7 @@
  
  if(isset($_GET['id'])) {
   
-  
+     
      $query = query("SELECT * FROM products WHERE product_id = " . escape_string($_GET['id']) . " ");
      confirm($query);
   
@@ -17,10 +17,14 @@
     $short_desc             = escape_string($row['short_desc']);
     $product_quantity       = escape_string($row['product_quantity']);
     $product_image          = escape_string($row['product_image']);
+    
+    $product_image          = display_image($row['product_image']); 
 
     }
 
+
 update_product();
+
 
 }
 
@@ -49,20 +53,20 @@ update_product();
 
     <div class="form-group">
            <label for="product-title">Product Description</label>
-      <textarea name="product_description" id="" cols="30" rows="10" class="form-control"></textarea>
+      <textarea name="product_description" id="" cols="30" rows="10" class="form-control"><?php echo $product_description; ?></textarea>
     </div>
 
     <div class="form-group row">
 
       <div class="col-xs-3">
         <label for="product-price">Product Price</label>
-        <input type="number" name="product_price" class="form-control" size="60">
+        <input type="number" name="product_price" class="form-control" size="60" value="<?php echo $product_price; ?>">
       </div>
     </div>
 
     <div class="form-group">
            <label for="product-title">Product Short Description</label>
-      <textarea name="short_desc" id="" cols="30" rows="3" class="form-control"></textarea>
+      <textarea name="short_desc" id="" cols="30" rows="3" class="form-control"><?php echo $short_desc; ?></textarea>
     </div>
 
 
@@ -100,7 +104,7 @@ update_product();
 
     <div class="form-group">
       <label for="product-title">Product Quantity</label>
-         <input type="number" name="product_quantity" class="form-control">
+         <input type="number" name="product_quantity" class="form-control" value="<?php echo $product_quantity; ?>">
     </div>
 
 
@@ -117,7 +121,9 @@ update_product();
     <!-- Product Image -->
     <div class="form-group">
         <label for="product-title">Product Image</label>
-        <input type="file" name="file">
+        <input type="file" name="file"> <br>
+
+        <img width='200' src="../../resources/<?php echo $product_image; ?>" alt="">
       
     </div>
 
