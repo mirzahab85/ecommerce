@@ -349,7 +349,7 @@ if(isset($_POST['publish'])) {
     move_uploaded_file($image_temp_location  , UPLOAD_DIRECTORY . DS . $product_image);
     
     
-    $query = query("INSERT INTO products(product_title, product_category_id, product_price, product_description, short_desc, product_quantity, product_image) VALUES('{$product_title}', '{$product_category_id}', '{$product_price}', '{$product_description}', '{$short_desc}', '{$product_quantity}', '{$product_image}')");
+    $query = query("INSERT INTO products(product_title, product_category_id, product_price, product_description, short_desc, product_quantity, product_image) VALUES('{$product_title}', '{$product_category_id}','{$product_price}', '{$product_description}', '{$short_desc}', '{$product_quantity}', '{$product_image}')");
     $last_id = last_id();
     confirm($query);
     set_message("New Product with id {$last_id} was Added");
@@ -393,20 +393,30 @@ function update_product() {
         
         move_uploaded_file($image_temp_location  , UPLOAD_DIRECTORY . DS . $product_image);
         
+        if(empty($product_image)) {
         
-        $query = "UPDATE products SET";
-        $query .= "product_title            = '{$product_title}'            ,"; 
-        $query .= "product_category_id      = '{$product_category_id}'      ,"; 
-        $query .= "product_price            = '{$product_price}'            ,"; 
-        $query .= "product_description      = '{$product_description}'      ,"; 
-        $query .= "short_desc               = '{$short_desc}'               ,"; 
-        $query .= "product_quantity         = '{$product_quantity}'         ,"; 
-        $query .= "product_image            = '{$product_image}'             ";
-        $query .= "WHERE product_id" . escape_string($_GET['id']); 
-
-
+        $get_pic = query("SELECT product_image FROM products WHERE product_id =" .escape_string($_GET['id']). "");
+        confirm($get_pic);
+    
+        while($pic = fetch_array($get_pic)) {
+            
+        $product_image = $pic['product_image'];
+    
+            }
+        }
         
-        confirm($query);
+        $query = "UPDATE products SET ";
+        $query .= "product_title            	= '{$product_title}'               ,       ";
+        $query .= "product_category_id          = '{$product_category_id}'         ,       ";
+        $query .= "product_price                = '{$product_price}'               ,       ";
+        $query .= "product_description          = '{$product_description}'         ,       ";
+        $query .= "short_desc                   = '{$short_desc}'                  ,       ";
+        $query .= "product_quantity             = '{$product_quantity}'            ,       ";
+        $query .= "product_image                = '{$product_image}'                       ";
+        $query .= "WHERE product_id=" . escape_string($_GET['id']);
+
+        $send_update_query = query($query);
+        confirm($send_update_query);
         set_message("Product has been updated");
         redirect("index.php?products");
         }
