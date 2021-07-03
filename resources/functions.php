@@ -466,8 +466,6 @@ confirm($insert_title);
 
 set_message("CATEGORY CREATED");
 
-redirect("index.php?categories");
-
 }
 
 }
