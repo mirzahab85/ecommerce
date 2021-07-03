@@ -439,7 +439,7 @@ $category = <<<DELIMETER
 <tr>
     <td>{$cat_id}</td>
     <td>{$cat_title}</td>
-    <td>DELETE</td>
+    <td><a class="btn btn-danger" href="../../resources/templates/back/delete_category.php?id={$row['cat_id']}"><span class="glyphicon glyphicon-remove"></span></a></td>
 </tr>
 
 DELIMETER;
@@ -455,17 +455,23 @@ function add_category() {
 if(isset($_POST['add_category'])) {
 $cat_title = escape_string($_POST['cat_title']);
 
+if(empty($cat_title) || $cat_title == " ") {
+
+echo "<p class='bg-danger'>THIS CANNOT BE EMPTY</p>";
+
+} else {
+
 $insert_title = query("INSERT INTO categories(cat_title) VALUES('{$cat_title}')");
 confirm($insert_title);
 
-if(mysqli_affected_rows($insert_cat) == 0) {
-
-set_message("NOTHING WORKED");
-
-}
+set_message("CATEGORY CREATED");
 
 redirect("index.php?categories");
+
 }
+
+}
+
 }
     
 ?>
