@@ -421,5 +421,32 @@ function update_product() {
         redirect("index.php?products");
         }
     }
+
+/*************************************Categories in admin ****************************/
+
+function show_categories_in_admin() {
+
+$category_query = query("SELECT * FROM categories");
+confirm($category_query);
+
+while ($row = fetch_array($category_query)) {
+
+$cat_id = $row['cat_id'];
+$cat_title = $row['cat_title'];
+
+$category = <<<DELIMETER
+
+<tr>
+    <td>{$cat_id}</td>
+    <td>{$cat_title}</td>
+</tr>
+
+DELIMETER;
+
+echo $category;
+
+}
+
+}
     
 ?>
