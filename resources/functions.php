@@ -439,6 +439,7 @@ $category = <<<DELIMETER
 <tr>
     <td>{$cat_id}</td>
     <td>{$cat_title}</td>
+    <td>DELETE</td>
 </tr>
 
 DELIMETER;
@@ -447,6 +448,24 @@ echo $category;
 
 }
 
+}
+
+function add_category() {
+
+if(isset($_POST['add_category'])) {
+$cat_title = escape_string($_POST['cat_title']);
+
+$insert_title = query("INSERT INTO categories(cat_title) VALUES('{$cat_title}')");
+confirm($insert_title);
+
+if(mysqli_affected_rows($insert_cat) == 0) {
+
+set_message("NOTHING WORKED");
+
+}
+
+redirect("index.php?categories");
+}
 }
     
 ?>
