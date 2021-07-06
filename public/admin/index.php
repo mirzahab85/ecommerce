@@ -39,6 +39,13 @@ redirect("../../public");
                     include(TEMPLATE_BACK . "/categories.php");
 
                 }
+
+                if(isset($_GET['users'])) {
+
+                    include(TEMPLATE_BACK . "/users.php");
+                    
+                }
+
                 if(isset($_GET['products'])) {
                     
 
