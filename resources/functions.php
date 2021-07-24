@@ -81,7 +81,7 @@ return mysqli_fetch_array($result);
 
 function get_products() {
 
-$query = query(" SELECT * FROM products");
+$query = query("SELECT * FROM products WHERE product_quantity >= 1 ");
 confirm($query);
 
 while($row = fetch_array($query)) {
@@ -317,6 +317,19 @@ DELIMETER;
 echo $product;
     }
 }
+
+function show_product_category_title($product_category_id) {
+
+    $category_query = query("SELECT * FROM categories WHERE cat_id = '{$product_category_id}' ");
+    confirm($category_query);
+    
+    while($category_row = fetch_array($category_query)) {
+    
+    return $category_row['cat_title'];
+    
+    }
+    
+    }
 
 /********************************Add Products in admin *******************************/
 
