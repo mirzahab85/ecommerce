@@ -82,6 +82,13 @@ redirect("../../public");
                     include(TEMPLATE_BACK . "/reports.php");
 
                 }
+
+                if(isset($_GET['delete_order_id'])) {
+                    
+
+                    include(TEMPLATE_BACK . "/delete_order.php");
+
+                }
                 
                 ?>
 
