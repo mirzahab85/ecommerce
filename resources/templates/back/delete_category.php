@@ -1,16 +1,16 @@
-<?php require_once("../../config.php");
+<?php require_once("../../resources/config.php");
 
-if(isset($_GET['id'])) {
+if(isset($_GET['delete_category_id'])) {
 
-$query = query("DELETE FROM categories WHERE cat_id = " . escape_string($_GET['id']) . " ");
+$query = query("DELETE FROM categories WHERE cat_id = " . escape_string($_GET['delete_category_id']) . " ");
 confirm($query);
 
 set_message("Category Deleted");
-redirect("../../../public/admin/index.php?categories");
+redirect("index.php?categories");
 
 } else {
 
-redirect("../../../public/admin/index.php?categories");
+redirect("index.php?categories");
 
 }
 

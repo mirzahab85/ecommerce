@@ -89,7 +89,30 @@ redirect("../../public");
                     include(TEMPLATE_BACK . "/delete_order.php");
 
                 }
+
+                if(isset($_GET['delete_product_id'])) {
+                   
+                    include(TEMPLATE_BACK . "/delete_product.php");
+
+                }
+
+                if(isset($_GET['delete_category_id'])) {
+
+                    include(TEMPLATE_BACK . "/delete_category.php");
                 
+                }
+
+                if(isset($_GET['delete_report_id'])) {
+
+                    include(TEMPLATE_BACK . "/delete_report.php");
+
+                }
+
+                if(isset($_GET['delete_user_id'])) {
+
+                    include(TEMPLATE_BACK . "/delete_user.php");
+                }
+
                 ?>
 
             </div>

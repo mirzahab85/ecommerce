@@ -309,7 +309,7 @@ $product = <<<DELIMETER
             <td>{$category}</td>
             <td>{$row['product_price']}</td>
             <td>{$row['product_quantity']}</td>
-            <td><a class="btn btn-danger" href="../../resources/templates/back/delete_product.php?id={$row['product_id']}"><span class="glyphicon glyphicon-remove"></span></a></td>
+            <td><a class="btn btn-danger" href="index.php?delete_product_id={$row['product_id']}"><span class="glyphicon glyphicon-remove"></span></a></td>
          </tr> 
     
 DELIMETER;
@@ -439,7 +439,7 @@ $category = <<<DELIMETER
 <tr>
     <td>{$cat_id}</td>
     <td>{$cat_title}</td>
-    <td><a class="btn btn-danger" href="../../resources/templates/back/delete_category.php?id={$row['cat_id']}"><span class="glyphicon glyphicon-remove"></span></a></td>
+    <td><a class="btn btn-danger" href="index.php?delete_category_id={$row['cat_id']}"><span class="glyphicon glyphicon-remove"></span></a></td>
 </tr>
 
 DELIMETER;
@@ -492,7 +492,7 @@ set_message("CATEGORY CREATED");
     <td>{$user_id}</td>
     <td>{$username}</td>
      <td>{$email}</td>
-    <td><a class="btn btn-danger" href="../../resources/templates/back/delete_user.php?id={$row['user_id']}"><span class="glyphicon glyphicon-remove"></span></a></td>
+     <td><a class="btn btn-danger" href="index.php?delete_user_id={$row['user_id']}"><span class="glyphicon glyphicon-remove"></span></a></td>
 </tr>
 
 DELIMETER;
@@ -544,7 +544,7 @@ function get_reports() {
                 <td>{$row['product_price']}</td>
                 <td>{$row['product_title']}<br>
                 <td>{$row['product_quantity']}</td>
-                <td><a class="btn btn-danger" href="../../resources/templates/back/delete_report.php?id={$row['report_id']}"><span class="glyphicon glyphicon-remove"></span></a></td>
+                <td><a class="btn btn-danger" href="index.php?delete_report_id={$row['report_id']}"><span class="glyphicon glyphicon-remove"></span></a></td>
              </tr> 
         
     DELIMETER;
