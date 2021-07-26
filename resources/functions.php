@@ -549,9 +549,87 @@ function get_reports() {
         
     DELIMETER;
         
-    echo $report;
+    echo $report; 
     
-    }    
 }
+
+}
+
+/**********************Slides Functions ***********************/
+
+function add_slides() {
+
+
+
+
+
+
+
+}
+
+
+function get_current_slide() {
+
+
+
+
+
+    
+}
+
+
+
+
+
+
+function get_active(){
+
+
+
+
+
+
+
+
+}
+
+
+
+
+function get_slided() {
+
+
+
+
+
+
+
+}
+
+
+
+
+
+function get_slide_thumbnails() {
+
+
+
+
+
+
+}
+
+
+
+function get_slides() {
+
+
+
+
+
+
+}
+
+
 
 ?>
