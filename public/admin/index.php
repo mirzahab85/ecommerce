@@ -83,6 +83,14 @@ redirect("../../public");
 
                 }
 
+                if(isset($_GET['slides'])) {
+                    
+
+                    include(TEMPLATE_BACK . "/slides.php");
+
+                }
+
+
                 if(isset($_GET['delete_order_id'])) {
                     
 

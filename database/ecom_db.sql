@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 06, 2021 at 09:39 PM
+-- Generation Time: Jul 26, 2021 at 09:40 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -39,7 +39,7 @@ CREATE TABLE `categories` (
 INSERT INTO `categories` (`cat_id`, `cat_title`) VALUES
 (1, 'example 1'),
 (2, 'example 2'),
-(9, 'Jeans');
+(17, 'majica');
 
 -- --------------------------------------------------------
 
@@ -78,11 +78,11 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `product_title`, `product_category_id`, `product_price`, `product_quantity`, `product_description`, `short_desc`, `product_image`) VALUES
-(11, 'my third product', 9, 400, 345, 'my third product', 'my third product', 'image9.png'),
-(13, 'Blue Jeansaaaa', 1, 60, 34453, 'Blue Jeans', 'Blue Jeans short description', 'image2.png'),
-(14, 'my third productssss', 1, 11, 11, 'my third product desc', 'my third product short desc', 'image4.png'),
-(15, 'My second product ', 9, 3, 1, 'asd', 'ASDSD', 'image2.png'),
-(16, 'my third products1', 0, 10, 1, 'my third products1 description', 'my third short products1 description', 'icon1.png');
+(11, 'my third product', 9, 400, 0, 'my third product', 'my third product', 'image9.png'),
+(13, 'Blue Jeansaaaa', 1, 60, 1, 'Blue Jeans', 'Blue Jeans short description', 'image2.png'),
+(14, 'my third productssss', 1, 11, 0, 'my third product desc', 'my third product short desc', 'image4.png'),
+(17, 'Instagram title', 16, 10, 1, 'Instagram Description', 'Instagram Short Desc', 'icon2.png'),
+(18, 'Shirt 26', 17, 12, 1, 'Shirt desc', 'Shirt short desc', 'shirt.jpg');
 
 -- --------------------------------------------------------
 
@@ -104,26 +104,32 @@ CREATE TABLE `reports` (
 --
 
 INSERT INTO `reports` (`report_id`, `product_id`, `order_id`, `product_price`, `product_title`, `product_quantity`) VALUES
-(4, 1, 0, 24.99, '', 2),
-(5, 1, 0, 24.99, '', 2),
-(6, 1, 0, 24.99, '', 2),
-(7, 1, 0, 24.99, '', 2),
-(8, 1, 0, 24.99, '', 2),
-(9, 1, 0, 24.99, '', 2),
-(10, 1, 525048, 24.99, '', 2),
-(11, 1, 525049, 24.99, '', 2),
-(12, 1, 525050, 24.99, '', 2),
-(13, 1, 525051, 24.99, '', 2),
-(16, 1, 525053, 24.99, 'product 1', 4),
-(17, 2, 525053, 299.99, 'product 2', 4),
 (18, 1, 525054, 24.99, 'product 1', 4),
 (19, 2, 525054, 299.99, 'product 2', 4),
 (20, 1, 525055, 24.99, 'product 1', 4),
 (21, 2, 525055, 299.99, 'product 2', 4),
 (22, 1, 525056, 24.99, 'product 1', 4),
-(23, 2, 525056, 299.99, 'product 2', 4),
-(24, 1, 525057, 24.99, 'product 1', 4),
-(25, 2, 525058, 299.99, 'product 2', 4);
+(23, 2, 525056, 299.99, 'product 2', 4);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `slides`
+--
+
+CREATE TABLE `slides` (
+  `slide_id` int(11) NOT NULL,
+  `slide_title` varchar(255) NOT NULL,
+  `slide_image` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `slides`
+--
+
+INSERT INTO `slides` (`slide_id`, `slide_title`, `slide_image`) VALUES
+(1, 'Test slide 1', 'image_1.png'),
+(2, 'Test slide 2', 'image_2.png');
 
 -- --------------------------------------------------------
 
@@ -144,7 +150,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_id`, `username`, `email`, `password`) VALUES
 (1, 'rico', 'rico@hotmail.com', '123'),
-(7, 'miki', 'test@example.com', 'asd123');
+(7, 'miki', 'test@example.com', 'asd123'),
+(10, 'rico11', 'mirza.habul1985@gmail.com', '111'),
+(11, 'miki11', 'hab@test.com', '111');
 
 --
 -- Indexes for dumped tables
@@ -175,6 +183,12 @@ ALTER TABLE `reports`
   ADD PRIMARY KEY (`report_id`);
 
 --
+-- Indexes for table `slides`
+--
+ALTER TABLE `slides`
+  ADD PRIMARY KEY (`slide_id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -188,7 +202,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `orders`
@@ -200,7 +214,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `reports`
@@ -209,10 +223,16 @@ ALTER TABLE `reports`
   MODIFY `report_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
+-- AUTO_INCREMENT for table `slides`
+--
+ALTER TABLE `slides`
+  MODIFY `slide_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
