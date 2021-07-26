@@ -559,77 +559,40 @@ function get_reports() {
 
 function add_slides() {
 
-
-
-
-
-
-
 }
-
 
 function get_current_slide() {
 
-
-
-
-
-    
 }
-
-
-
-
-
 
 function get_active(){
 
-
-
-
-
-
-
-
 }
-
-
-
-
-function get_slided() {
-
-
-
-
-
-
-
-}
-
-
-
-
-
-function get_slide_thumbnails() {
-
-
-
-
-
-
-}
-
-
 
 function get_slides() {
 
+$query = query("SELECT * FROM slides");
+confirm($query);
 
+while($row = fetch_array($query)) {
 
+$slides = <<<DELIMETER
 
+<div class="item">
+    <img class="slide-image" src="http://placehold.it/800x300?text=HELLO" alt="">
+</div>
 
+DELIMETER;
+
+echo $slides;
+
+} 
 
 }
 
+function get_slide_thumbnails() {
+
+}
 
 
 ?>
