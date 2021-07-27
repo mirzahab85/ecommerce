@@ -559,7 +559,24 @@ function get_reports() {
 
 function add_slides() {
 
+if(isset($_POST['add_slide'])) {
+    
+$slide_title                    =               escape_string($_POST['slide_title']);
+$slide_image                    =               escape_string($FILES['file']['name']);
+$slide_image_loc                =               escape_string($FILES['file']['tmp_name']);}
+
+if(empty($slide_title) || empty($slide_image)) {
+
+echo "<p class='bg-danger'> This field can not be empty</p>";
+
+} else {
+
+move_uploaded_file($slide_image_loc, UPLOAD_DIRECTORY . DS . $slide_image);
+
+    }
+
 }
+
 
 function get_current_slide() {
 
