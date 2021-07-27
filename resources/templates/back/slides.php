@@ -1,3 +1,5 @@
+<?php add_slides(); ?>
+
 <div class="row">
 
     <h3 class="bg-success"><?php display_message(); ?></h3>

@@ -562,8 +562,8 @@ function add_slides() {
 if(isset($_POST['add_slide'])) {
     
 $slide_title                    =               escape_string($_POST['slide_title']);
-$slide_image                    =               escape_string($FILES['file']['name']);
-$slide_image_loc                =               escape_string($FILES['file']['tmp_name']);}
+$slide_image                    =               escape_string($_FILES['file']['name']);
+$slide_image_loc                =               escape_string($_FILES['file']['tmp_name']);}
 
 if(empty($slide_title) || empty($slide_image)) {
 
@@ -573,6 +573,10 @@ echo "<p class='bg-danger'> This field can not be empty</p>";
 
 move_uploaded_file($slide_image_loc, UPLOAD_DIRECTORY . DS . $slide_image);
 
+$query = query("INSERT INTO slides(slide_title, slide_image) VALUES ('{$slide_title}','{$slide_image}')");
+confirm($query);
+set_message("Slide Added");
+redirect("index.php?slides");
     }
 
 }
