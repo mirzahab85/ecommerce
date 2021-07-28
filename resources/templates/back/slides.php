@@ -6,6 +6,7 @@
 
         <form action="" method="post" enctype="multipart/form-data">
 
+
             <?php add_slides(); ?>
 
             <div class="form-group">
@@ -30,16 +31,24 @@
 
     </div>
 
+
     <div class="col-xs-8">
 
-        <?php get_current_slide_in_admin(); ?>
+        <?php get_current_slide_in_admin() ?>
 
-    </div><!-- ROW-->
 
-    <hr>
+    </div>
 
-    <h1>Slides Available</h1>
+</div><!-- ROW-->
 
-    <div class=" row">
+<hr>
+
+<h1>Slides Available</h1>
+
+<div class="row">
+
+    <div class="col-xs-8">
+
+        <?php get_slide_thumbnails(); ?>
 
     </div>

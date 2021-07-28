@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 26, 2021 at 09:40 PM
+-- Generation Time: Jul 28, 2021 at 04:27 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -39,7 +39,7 @@ CREATE TABLE `categories` (
 INSERT INTO `categories` (`cat_id`, `cat_title`) VALUES
 (1, 'example 1'),
 (2, 'example 2'),
-(17, 'majica');
+(19, 'jacket');
 
 -- --------------------------------------------------------
 
@@ -78,11 +78,11 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `product_title`, `product_category_id`, `product_price`, `product_quantity`, `product_description`, `short_desc`, `product_image`) VALUES
-(11, 'my third product', 9, 400, 0, 'my third product', 'my third product', 'image9.png'),
+(11, 'my third product 45', 9, 400, 0, 'my third product', 'my third product', 'image9.png'),
 (13, 'Blue Jeansaaaa', 1, 60, 1, 'Blue Jeans', 'Blue Jeans short description', 'image2.png'),
 (14, 'my third productssss', 1, 11, 0, 'my third product desc', 'my third product short desc', 'image4.png'),
-(17, 'Instagram title', 16, 10, 1, 'Instagram Description', 'Instagram Short Desc', 'icon2.png'),
-(18, 'Shirt 26', 17, 12, 1, 'Shirt desc', 'Shirt short desc', 'shirt.jpg');
+(18, 'Shirt 26', 17, 12, 1, 'Shirt desc', 'Shirt short desc', 'shirt.jpg'),
+(19, 'my third products', 17, 12, 1, 'product desc', 'product short desc', 'image9.png');
 
 -- --------------------------------------------------------
 
@@ -128,8 +128,9 @@ CREATE TABLE `slides` (
 --
 
 INSERT INTO `slides` (`slide_id`, `slide_title`, `slide_image`) VALUES
-(1, 'Test slide 1', 'image_1.png'),
-(2, 'Test slide 2', 'image_2.png');
+(18, 'BootStrap', 'image_2.png'),
+(19, 'JavaScript', 'image_1.png'),
+(20, 'PHP', 'php-1.jpg');
 
 -- --------------------------------------------------------
 
@@ -152,7 +153,7 @@ INSERT INTO `users` (`user_id`, `username`, `email`, `password`) VALUES
 (1, 'rico', 'rico@hotmail.com', '123'),
 (7, 'miki', 'test@example.com', 'asd123'),
 (10, 'rico11', 'mirza.habul1985@gmail.com', '111'),
-(11, 'miki11', 'hab@test.com', '111');
+(12, 'miki_hab', 'hab@test.com', '123');
 
 --
 -- Indexes for dumped tables
@@ -202,7 +203,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `orders`
@@ -214,7 +215,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `reports`
@@ -226,13 +227,13 @@ ALTER TABLE `reports`
 -- AUTO_INCREMENT for table `slides`
 --
 ALTER TABLE `slides`
-  MODIFY `slide_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `slide_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
