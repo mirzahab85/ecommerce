@@ -12,13 +12,13 @@ redirect("../../public");
 
 ?>
 
-        <div id="page-wrapper">
+<div id="page-wrapper">
 
-            <div class="container-fluid">
+    <div class="container-fluid">
 
 
 
-                <?php
+        <?php
 
                 if($_SERVER['REQUEST_URI'] == "/ecommerce/public/admin/" || $_SERVER['REQUEST_URI'] == "/ecommerce/public/admin/index.php")  {
                     
@@ -120,13 +120,18 @@ redirect("../../public");
 
                     include(TEMPLATE_BACK . "/delete_user.php");
                 }
+                
+                if(isset($_GET['delete_slide_id'])) {
+
+                    include(TEMPLATE_BACK . "/delete_slide.php");
+                }
 
                 ?>
 
-            </div>
-            <!-- /.container-fluid -->
+    </div>
+    <!-- /.container-fluid -->
 
-        </div>
-        <!-- /#page-wrapper -->
+</div>
+<!-- /#page-wrapper -->
 
 <?php include(TEMPLATE_BACK . "/footer.php"); ?>
