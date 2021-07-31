@@ -23,6 +23,8 @@
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <link href="css/styles.css" rel="stylesheet">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -39,11 +41,11 @@
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
-           
-    <!-- Top_items -->    
-    <?php include(TEMPLATE_BACK . "/top_nav.php"); ?>
+
+            <!-- Top_items -->
+            <?php include(TEMPLATE_BACK . "/top_nav.php"); ?>
 
 
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-   <?php include(TEMPLATE_BACK . "/side_nav.php"); ?>
+            <?php include(TEMPLATE_BACK . "/side_nav.php"); ?>
         </nav>

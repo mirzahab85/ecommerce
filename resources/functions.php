@@ -668,8 +668,7 @@ $slide_thumb_admin = <<<DELIMETER
 
 		<a href="">
 						
-        <img class="img-responsive" src="../../resources/{$slide_image}" alt="">
-            
+        <img width='200' class="img-responsive slide_image" src="../../resources/{$slide_image}" alt="">
         </a>
 </div>
 
