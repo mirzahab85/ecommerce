@@ -664,7 +664,7 @@ $slide_image = display_image($row['slide_image']);
 
 $slide_thumb_admin = <<<DELIMETER
 
-<div class="col-xs-6 col-md-3">
+<div class="col-xs-6 col-md-3 image-container">
 
 		<a href="index.php?delete_slide_id={$row['slide_id']}">
 						
