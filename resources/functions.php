@@ -670,6 +670,12 @@ $slide_thumb_admin = <<<DELIMETER
 						
         <img width='200' class="img-responsive slide_image" src="../../resources/{$slide_image}" alt="">
         </a>
+
+        <div class="caption">
+        
+        <p>{$row['slide_title']}</p>
+        
+        </div>
 </div>
 
 DELIMETER;
