@@ -116,16 +116,24 @@ $sub2 = $page - 2;
 $add1 = $page + 1;
 $add2 = $page + 2;
 
-if ($page == 1){
+if ($page > 2 && $page < ($lastPage -1)){
     
     $middleNumbers = '<li class="page-item active"><a>' .$page. '</a></li>';
     
     $middleNumbers .= '<li class="page-item active"><a class="page-link" href"'.$_SERVER['PHP_SELF'].'?page= '.$add1.'">
     ' .$add1. '</a></li>';
-
-    echo "<ul class='pagination'>$middleNumbers</ul>";
     
+} elseif ($page == $lastPage) {
+    
+    $middleNumbers .= '<li class="page-item"><a class="page-link" href="'.$_SERVER['PHP_SELF'].'?page= '.$sub1.'">' .$sub1. '</a></li>';
+    $middleNumbers .= '<li class="page-item"><a class="page-link" href="'.$_SERVER['PHP_SELF'].'?page= '.$sub2.'">' .$sub2. '</a></li>';
+    $middleNumbers .= '<li class="page-item"><a class="page-link" href="'.$_SERVER['PHP_SELF'].'?page= '.$add1.'">' .$add1. '</a></li>';
+    $middleNumbers .= '<li class="page-item"><a class="page-link" href="'.$_SERVER['PHP_SELF'].'?page= '.$add2.'">' .$add2. '</a></li>';
+    
+    // echo "<ul class='pagination'>{$middleNumbers}</ul>";
 }
+
+
 
 while($row = fetch_array($query)) {
 
