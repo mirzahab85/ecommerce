@@ -84,6 +84,31 @@ function get_products() {
 $query = query("SELECT * FROM products WHERE product_quantity >= 1 ");
 confirm($query);
 
+// Pagination
+
+$rows = mysqli_num_rows($query);
+
+if(isset($_GET['page'])){
+    
+    $page = preg_replace('#[^0-9]#', '',$_GET['page']);
+    
+} else{
+    $page = 1;
+}
+
+$perPage = 6;
+
+$lastPage = ceil($rows / $perPage);
+
+if($page < 1){
+    
+    $page = 1;
+    
+}elseif($page > $lastPage){
+    
+    $page = $lastPage;
+}
+
 while($row = fetch_array($query)) {
 
 $product_image = display_image($row['product_image']);
@@ -92,7 +117,7 @@ $product = <<<DELIMETER
 
 <div class="col-sm-4 col-lg-4 col-md-4">
     <div class="thumbnail">
-        <a href="item.php?id={$row['product_id']}"><img style="height:90px" src="../resources/{$product_image}" alt=""></a>
+        <a href="item.php?id={$row['product_id']}"><img style="height:90px; width: 260px" src="../resources/{$product_image}" alt=""></a>
         <div class="caption">
             <h4 class="pull-right">&#36;{$row['product_price']}</h4>
             <h4><a href="item.php?id={$row['product_id']}">{$row['product_title']}</a>
