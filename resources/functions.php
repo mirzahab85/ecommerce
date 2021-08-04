@@ -152,6 +152,35 @@ if ($page == 1){
 
 $limit = 'LIMIT' . ($page-1) * $perPage . ',' . $perPage;  
 
+$query = query("SELECT * FROM products $limit");
+confirm($query);
+
+$outputPagination = "";
+
+// if($lastPage != "1"){
+    
+//     echo "Page $page of $lastPage";    
+
+// }
+
+if($page != 1){
+    
+    $prev = $page - 1;
+    $outputPagination .='<li class="page-item"><a class="page-link" href="'.$_SERVER['PHP_SELF'].'?page='.$prev.'">Back</a></li>';
+    
+    $outputPagination = $middleNumbers;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 while($row = fetch_array($query)) {
