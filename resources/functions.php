@@ -152,8 +152,8 @@ if ($page == 1){
 
 $limit = 'LIMIT' . ($page-1) * $perPage . ',' . $perPage;  
 
-$query = query("SELECT * FROM products $limit");
-confirm($query);
+$query2 = query(" SELECT * FROM products $limit");
+confirm($query2);
 
 $outputPagination = "";
 
