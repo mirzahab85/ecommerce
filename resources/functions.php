@@ -118,40 +118,30 @@ $add2 = $page + 2;
 
 if ($page == 1){
     
-    $middleNumbers = '<li class="page-item active"><a>' .$page. '</a></li>';
-    
-    $middleNumbers .= '<li class="page-item active"><a class="page-link" href"'.$_SERVER['PHP_SELF'].'?page= '.$add1.'">' .$add1. '</a></li>';
+    $middleNumbers .= '<li class="page-item active"><a>' .$page. '</a></li>';
+    $middleNumbers .= '<li class="page-item"><a class="page-link" href="'.$_SERVER['PHP_SELF'].'?page='.$add1.'">' .$add1. '</a></li>';
     
 }else if ($page == $lastPage) {
 
-    $middleNumbers .= '<li class="page-item active"><a class="page-link" href"'.$_SERVER['PHP_SELF'].'?page= '.$sub1.'">' .$sub1. '</a></li>';
-    $middleNumbers = '<li class="page-item active"><a>' .$page. '</a></li>';
+    $middleNumbers .= '<li class="page-item"><a class="page-link" href"'.$_SERVER['PHP_SELF'].'?page='.$sub1.'">' .$sub1. '</a></li>';
+    $middleNumbers .= '<li class="page-item active"><a>' .$page. '</a></li>';
  
 } elseif ($page > 2 && $page < ($lastPage -1)) {
     
-    $middleNumbers .= '<li class="page-item"><a class="page-link" href="'.$_SERVER['PHP_SELF'].'?page= '.$sub2.'">' .$sub2. '</a></li>';
-    
-    $middleNumbers .= '<li class="page-item"><a class="page-link" href="'.$_SERVER['PHP_SELF'].'?page= '.$sub1.'">' .$sub1. '</a></li>';
-    
+    $middleNumbers .= '<li class="page-item"><a class="page-link" href="'.$_SERVER['PHP_SELF'].'?page='.$sub2.'">' .$sub2. '</a></li>';
+    $middleNumbers .= '<li class="page-item"><a class="page-link" href="'.$_SERVER['PHP_SELF'].'?page='.$sub1.'">' .$sub1. '</a></li>';
     $middleNumbers .= '<li class="page-item active"><a>' .$page. '</a></li>';
-    
-    $middleNumbers .= '<li class="page-item"><a class="page-link" href="'.$_SERVER['PHP_SELF'].'?page= '.$add1.'">' .$add1. '</a></li>';
-    
-    $middleNumbers .= '<li class="page-item"><a class="page-link" href="'.$_SERVER['PHP_SELF'].'?page= '.$add2.'">' .$add2. '</a></li>';
+    $middleNumbers .= '<li class="page-item"><a class="page-link" href="'.$_SERVER['PHP_SELF'].'?page='.$add1.'">' .$add1. '</a></li>';
+    $middleNumbers .= '<li class="page-item"><a class="page-link" href="'.$_SERVER['PHP_SELF'].'?page='.$add2.'">' .$add2. '</a></li>';
     
 } elseif ($page > 1 && $page < $lastPage) {
 
-    $middleNumbers .= '<li class="page-item"><a class="page-link" href="'.$_SERVER['PHP_SELF'].'?page= '.$sub1.'">' .$sub1. '</a></li>';
-
+    $middleNumbers .= '<li class="page-item"><a class="page-link" href="'.$_SERVER['PHP_SELF'].'?page='.$sub1.'">' .$sub1. '</a></li>';
     $middleNumbers .= '<li class="page-item active"><a>' .$page. '</a></li>';
-
-    $middleNumbers .= '<li class="page-item"><a class="page-link" href="'.$_SERVER['PHP_SELF'].'?page= '.$add1.'">' .$add1. '</a></li>';
-    
-    echo "<ul class='pagination'>{$middleNumbers}</ul>";
+    $middleNumbers .= '<li class="page-item"><a class="page-link" href="'.$_SERVER['PHP_SELF'].'?page='.$add1.'">' .$add1. '</a></li>'; 
 }
 
-$limit = 'LIMIT' . ($page-1) * $perPage . ',' . $perPage;  
-
+$limit = 'LIMIT ' . ($page-1) * $perPage . ',' . $perPage;  
 $query2 = query(" SELECT * FROM products $limit");
 confirm($query2);
 
@@ -164,29 +154,19 @@ $outputPagination = "";
 // }
 
 if($page != 1){
-    
-    $prev = $page - 1;
+    $prev  = $page - 1;
     $outputPagination .='<li class="page-item"><a class="page-link" href="'.$_SERVER['PHP_SELF'].'?page='.$prev.'">Back</a></li>';
-    
-    $outputPagination = $middleNumbers;
 }
 
+$outputPagination .= $middleNumbers;
 
+if($page != $lastPage){
+    $next = $page + 1;
+    $outputPagination .='<li class="page-item"><a class="page-link" href="'.$_SERVER['PHP_SELF'].'?page='.$next.'">Next</a></li>';
+}
 
-
-
-
-
-
-
-
-
-
-
-while($row = fetch_array($query)) {
-
+while($row = fetch_array($query2)) {
 $product_image = display_image($row['product_image']);
-
 $product = <<<DELIMETER
 
 <div class="col-sm-4 col-lg-4 col-md-4">
@@ -208,6 +188,8 @@ DELIMETER;
 echo $product;
 
         }
+
+        echo "<div class='text-center'><ul class='pagination'>{$outputPagination}</ul></div>";
 
 }
 
