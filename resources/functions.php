@@ -79,14 +79,20 @@ return mysqli_fetch_array($result);
 
 // get products
 
-function get_products() {
 
-$query = query("SELECT * FROM products WHERE product_quantity >= 1 ");
-confirm($query);
+function count_all_records($table) {
+    return mysqli_num_rows(query('SELECT * FROM '.$table));   
+}
+
+function count_all_products_in_stock() {
+    return mysqli_num_rows(query('SELECT * FROM products WHERE product_quantity >= 1'));
+}
+
+function get_products() {
+    $rows = count_all_products_in_stock();
+    
 
 /******************** PAGINATION *******************************************************/
-
-$rows = mysqli_num_rows($query);
 
 if(isset($_GET['page'])){
     
@@ -116,6 +122,7 @@ $sub2 = $page - 2;
 $add1 = $page + 1;
 $add2 = $page + 2;
 
+
 if ($page == 1){
     
     $middleNumbers .= '<li class="page-item active"><a>' .$page. '</a></li>';
@@ -142,7 +149,9 @@ if ($page == 1){
 }
 
 $limit = 'LIMIT ' . ($page-1) * $perPage . ',' . $perPage;  
-$query2 = query(" SELECT * FROM products $limit");
+
+// query 2 is what we will use to display products with out $limit variable
+$query2 = query(" SELECT * FROM products WHERE product_quantity >= 1 ".$limit);
 confirm($query2);
 
 $outputPagination = "";
