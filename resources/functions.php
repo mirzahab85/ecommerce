@@ -88,7 +88,7 @@ function count_all_products_in_stock() {
     return mysqli_num_rows(query('SELECT * FROM products WHERE product_quantity >= 1'));
 }
 
-function get_products() {
+function get_products_with_pagination($perPage = "6") {
     $rows = count_all_products_in_stock();
     
 
@@ -101,8 +101,6 @@ if(isset($_GET['page'])){
 } else{
     $page = 1;
 }
-
-$perPage = 6;
 
 $lastPage = ceil($rows / $perPage);
 
@@ -186,7 +184,7 @@ $product = <<<DELIMETER
             <h4><a href="item.php?id={$row['product_id']}">{$row['product_title']}</a>
             </h4>
             <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
-             <a class="btn btn-primary" target="_blank" href="../resources/cart.php?add={$row['product_id']}">Add to cart</a>
+             <p class='text-center'><a class="btn btn-primary" target="_blank" href="../resources/cart.php?add={$row['product_id']}">Add to cart</a><a href="item.php?id={$row['product_id']}" class="btn btn-default">More Info</a></p>
         </div>
                                     
     </div>
@@ -198,7 +196,7 @@ echo $product;
 
         }
 
-        echo "<div class='text-center'><ul class='pagination'>{$outputPagination}</ul></div>";
+        echo "<div class='text-center' style='clear: both'><ul class='pagination'>{$outputPagination}</ul></div>";
 
 }
 
