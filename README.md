@@ -22,4 +22,11 @@
 ![image](https://user-images.githubusercontent.com/45422022/128613939-ea981e76-2879-478e-b5a5-dbf0292cfc17.png)
 ![image](https://user-images.githubusercontent.com/45422022/128613950-4bc88715-8912-4a65-8989-ae1347fd50c1.png)
 
+**INTRODUCTION:**
+<br><br>
+Is an integral part of e-business in the e-marketplace. Ordering and selling is done via the Internet.  
+It is the most profitable form of trade due to its simplicity and low price.
+E-commerce that takes place between two entrepreneurs is called B2B (business-to-business). They can also be open to stakeholders (commodity exchanges) or limited to retrained participants (private electronic marketplace).
+E-commerce that takes place between entrepreneurs and consumers is called B2C (business-to-client). Over the Internet, the buyer is usually connected to the seller’s system, and the transaction is done directly electronically in real time.
+There is a B2B2C (business-to-business-to-clinet) model that combines two modes between retailer and customer.
 
