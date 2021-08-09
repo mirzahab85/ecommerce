@@ -28,5 +28,11 @@ Is an integral part of e-business in the e-marketplace. Ordering and selling is 
 It is the most profitable form of trade due to its simplicity and low price.
 E-commerce that takes place between two entrepreneurs is called B2B (business-to-business). They can also be open to stakeholders (commodity exchanges) or limited to retrained participants (private electronic marketplace).
 E-commerce that takes place between entrepreneurs and consumers is called B2C (business-to-client). Over the Internet, the buyer is usually connected to the seller’s system, and the transaction is done directly electronically in real time.
-There is a B2B2C (business-to-business-to-clinet) model that combines two modes between retailer and customer.
+There is a B2B2C (business-to-business-to-clinet) model that combines two modes between retailer and customer. Completion of the transaction will require the user to fill in or select a billing address, shipping address, and payment information, such as credit card or payment on delivery. An e-mail notification is sent immediately whereby the order is sent.
 
+**BACKGROUND:**
+<br><br>
+E-commerce is becoming more and more popular today and especially becoming more and more popular during the covid-19 pandemic. A lot of business houses, markets, computer stores, mobile phone stores, airlines, health food stores and others have websites that provide functionality to perform commercial transactions via the web.
+Today, shopping on the web is becoming more common and simpler compared to classic shopping.
+E-commerce websites will better present their product to a certain user, they will sell it more before they sell it in the classic way. The central concept of the application allows customers to buy virtually using the Internet and purchase items the products they want. The products we choose to buy go in shopping carts. 
+At checkout time, the items in the shopping cart will be presented as an order. This is the most important process of all e-commerce sites.
