@@ -36,3 +36,15 @@ E-commerce is becoming more and more popular today and especially becoming more 
 Today, shopping on the web is becoming more common and simpler compared to classic shopping.
 E-commerce websites will better present their product to a certain user, they will sell it more before they sell it in the classic way. The central concept of the application allows customers to buy virtually using the Internet and purchase items the products they want. The products we choose to buy go in shopping carts. 
 At checkout time, the items in the shopping cart will be presented as an order. This is the most important process of all e-commerce sites.
+
+**OBJECTIVES**
+<br><br>
+Online shopping is considered one of the most successful forms of commerce today. The objective of e-commerce is developing a web interface for the site. 
+The main goal of this website is:<br> 
+    • To develop an easy to use web-based interface where customers can search for products, view a complete description of the product and order the product.<br>
+    • Today, internet access is becoming commonplace and our product or service can reach almost everyone on the planet with an internet enabled device.<br>
+    • Virtual stores need to be open and open 24 hours a day even if your staff is not working, this may not be entirely true if your product or service requires             urgent human intervention.<br>
+    • We don’t have to maintain an entire stock of products in a web store - again this varies for different business models and will work well if you have a good           vendor that doesn’t assign defaults and a good partner or delivery team working synchronously for delivery.<br>
+    • When we build our brand faster, more and more people will know and talk and publish a blog about you on social networks.<br>
+    • Once your brand build, can easily diversify and pull out a certain segment if it fails with minimal losses.<br>
+    • Today, creating and setting up a website as well as just maintaining it is much cheaper given the many hosting services available than before.
