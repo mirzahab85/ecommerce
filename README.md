@@ -48,3 +48,27 @@ The main goal of this website is:<br>
     • When we build our brand faster, more and more people will know and talk and publish a blog about you on social networks.<br>
     • Once your brand build, can easily diversify and pull out a certain segment if it fails with minimal losses.<br>
     • Today, creating and setting up a website as well as just maintaining it is much cheaper given the many hosting services available than before.
+
+**PURPOSE, SCOPE, APPLICABILITY:**
+<br><br>
+**PURPOSE:** As technology develops more and more today, the internet is becoming more and more popular. Nowadays, the internet is no longer limited to seeking information or connecting with people, but is a platform on which we can buy or sell products.<br>
+E-commerce is a website that allows your company to sell products. Nowadays, we have an increasing number of consumers who buy online, so owning such a website is necessary. <br>
+The list of the best reasons for the existence of e-commerce are:<br>
+- Reach users when you sell a product or service through a national or global e-commerce website platform <br>
+- We are open 24 hours a day 7 days a week from the e-commerce site compared to classic shopping <br>
+- It doesn’t matter if it’s Saturday, Sunday, a national or religious holiday, your store is always open. It can also help you sell more and thus increase sales
+
+**SCOPE:** Today there is a large volume of e-commerce and it is getting bigger and bigger every day.<br>
+Today’s generation and those to come will fully belong to e-services. Every business and service in today’s world goes through the internet. E-services and e-government are the most desirable ways to connect with people around the world. <br>
+In 2020, it hit us with the COVID-19 virus, which we want to forget as soon as possible, and which is still present today. Brands have faced major challenges in developing websites and setting new standards in e-commerce.<br>
+The year 2021 is registered as the beginning of trust in e-shops, express deliveries, purchases through websites, pick-up in retail outlets, card-on-file, mobile payment, ordering and delivery of food to your home address via mobile phone and a large number of other segments.
+
+**APPLICABILITY:** The visitor tracking system is applied in areas where people want to perform the following tasks:
+- I can login / register on the website
+- They can easily search for products using keywords, such as name, category, etc...
+- Search results can be improved using filters such as price, product type, etc...
+- The user can buy a product that he likes, he or she can buy the product
+- They will pay for their orders using the integrated payment gateway
+- Payment will be made in several ways: by credit card, payment by company, payment by bank, paypal, etc ...
+- We will receive a confirmation e-mail after the order placed on the website
+- Customers, products, orders and other items will be managed by the administrator
