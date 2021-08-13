@@ -72,3 +72,14 @@ The year 2021 is registered as the beginning of trust in e-shops, express delive
 - Payment will be made in several ways: by credit card, payment by company, payment by bank, paypal, etc ...
 - We will receive a confirmation e-mail after the order placed on the website
 - Customers, products, orders and other items will be managed by the administrator
+
+**CHAPTER 2 - Technologies used for this project:**<br><br>
+**HTML:** Hypertext Mark-up Language (HTML) is how we format the appearance of web pages using HTML tags. A website consists of various elements such as: text, images, tables and the like. HTML uses tags to create, link, and structure elements of an HTML document. An HTML document consists of basic building blocks - HTML elements. Provides a way to create structured documents by highlighting structural semantics for text such as titles, paragraphs, lists, links, citations, and other items. Web browsers do not display the HTML tags, but use them to interpret the content of the page. Within the HTML header is defined script created in JavaScript language. 
+
+**CSS:** CSS is an abbreviation of the English word Cascading Style Sheets. It is designed to separate presentation and content, including layout, colors, and fonts. CSS can be internal, external and inline.
+With an external style sheet, you can change the look of an entire website.<br>
+HTML page must include a reference to the external style sheet file inside the <link> element, inside the head section.
+An internal style sheet is used if one HTML page has a unique style.<br>
+An inline style may be used to apply a unique style for a single element.<br>
+
+**BOOTSTRAP:**
